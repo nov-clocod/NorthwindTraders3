@@ -16,11 +16,8 @@ public class Main {
         String username = args[0];
         String password = args[1];
 
-        Scanner myScanner = null;
-
+        Scanner myScanner = new Scanner(System.in);
         try {
-            myScanner = new Scanner(System.in);
-
             boolean isDone = false;
 
             while (!isDone) {
@@ -52,9 +49,7 @@ public class Main {
             System.out.println("Please check your inputs!");
             System.out.println(ex.getMessage());
         } finally {
-            if (myScanner != null) {
-                myScanner.close();
-            }
+            myScanner.close();
         }
     }
 
