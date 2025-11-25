@@ -16,8 +16,10 @@ public class Main {
         String username = args[0];
         String password = args[1];
 
+        Scanner myScanner = null;
+
         try {
-            Scanner myScanner = new Scanner(System.in);
+            myScanner = new Scanner(System.in);
 
             boolean isDone = false;
 
@@ -49,6 +51,10 @@ public class Main {
         } catch (Exception ex) {
             System.out.println("Please check your inputs!");
             System.out.println(ex.getMessage());
+        } finally {
+            if (myScanner != null) {
+                myScanner.close();
+            }
         }
     }
 
